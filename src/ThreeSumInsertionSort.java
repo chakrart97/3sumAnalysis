@@ -9,7 +9,14 @@ public class ThreeSumInsertionSort {
     public static int count(int[] a) {
         int count = 0;
         //TODO: Finish ThreeSumInsertionSort using insertionsort instead of array sort.
-
+        insertionSort(a);
+        int n = a.length;
+        for (int i = 0; i < n; ++i) {
+            for (int j = i+1; j < n; ++j) {
+                if (BinarySearch.indexOf(a, -a[i]-a[j]) > j)
+                    count++;
+            }
+        }
         return count;
     }
 
